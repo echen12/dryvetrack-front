@@ -11,7 +11,7 @@ const decodeVIN = (vin) => {
 }
 
 const getAllVehicles = () => {
-    const request = axios.get(`https://localhost:7152/api/Car/mycars`, security)
+    const request = axios.get(`https://dryvetracktest20240922183800.azurewebsites.net/api/Car/mycars`, security)
 
     if (request.catch(e => e.response.data.length > 0)) {
         return request.catch(e => e.response.data);
@@ -21,7 +21,7 @@ const getAllVehicles = () => {
 }
 
 const getVehicleByOwnerAndVin = (vin) => {
-    const request = axios.get(`https://localhost:7152/api/Car/${vin}`, security)
+    const request = axios.get(`https://dryvetracktest20240922183800.azurewebsites.net/api/Car/${vin}`, security)
 
     if (request.catch(e => e.response.data.length > 0)) {
         return request.catch(e => e.response.data);
@@ -31,7 +31,7 @@ const getVehicleByOwnerAndVin = (vin) => {
 }
 
 const updateVehicleMileage = (vin, newMileage) => {
-    const request = axios.put(`https://localhost:7152/api/Car/updateMileage/${vin}`, newMileage, security)
+    const request = axios.put(`https://dryvetracktest20240922183800.azurewebsites.net/api/Car/updateMileage/${vin}`, newMileage, security)
 
     if (request.catch(e => e.response.data.length > 0)) {
         return request.catch(e => e.response.data);
@@ -42,7 +42,7 @@ const updateVehicleMileage = (vin, newMileage) => {
 
 
 const getInsuranceDetails = (vin) => {
-    const request = axios.get(`https://localhost:7152/api/Insurance/getInsuranceByVin/${vin}`, security)
+    const request = axios.get(`https://dryvetracktest20240922183800.azurewebsites.net/api/Insurance/getInsuranceByVin/${vin}`, security)
 
     if (request.catch(e => e.response.data.length > 0)) {
         return request.catch(e => e.response.data);
@@ -51,8 +51,8 @@ const getInsuranceDetails = (vin) => {
     }
 }
 
-const updateInsuranceDetails = (user, vin, obj) => {
-    const request = axios.put(`https://localhost:7152/api/Insurance/updateInsuranceByVin/${vin}`, obj, security)
+const updateInsuranceDetails = (vin, obj) => {
+    const request = axios.put(`https://dryvetracktest20240922183800.azurewebsites.net/api/Insurance/updateInsuranceByVin/${vin}`, obj, security)
 
     if (request.catch(e => e.response.data.length > 0)) {
         return request.catch(e => e.response.data);
@@ -61,8 +61,8 @@ const updateInsuranceDetails = (user, vin, obj) => {
     }
 }
 
-const addVehicleByOwner = (obj, id) => {
-    const request = axios.post(`https://localhost:7152/api/Car/addCar`, obj, security)
+const addVehicleByOwner = (obj) => {
+    const request = axios.post(`https://dryvetracktest20240922183800.azurewebsites.net/api/Car/addCar`, obj, security)
 
     if (request.catch(e => e.response.data.length > 0)) {
         return request.catch(e => e.response.data);
@@ -82,7 +82,7 @@ const updateVehicle = (id, obj, userId) => {
 }
 
 const deleteVehicle = (id) => {
-    const request = axios.delete(`https://localhost:7152/api/Car/delete/${id}`, security)
+    const request = axios.delete(`https://dryvetracktest20240922183800.azurewebsites.net/api/Car/delete/${id}`, security)
 
     if (request.catch(e => e.response.data.length > 0)) {
         return request.catch(e => e.response.data);
